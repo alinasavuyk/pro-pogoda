@@ -26,93 +26,7 @@ img {
    max-width: 1158px;
    margin: 0 auto;
  }
-               /* 1. Базові стилі для хедера */
-.app-header {
-  /* Темний фон, як на зразку */
-  background-color: #242c34; 
-  padding: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* 2. Стилізація контейнера для вмісту */
-.header-content {
-  /* Вирівнювання логотипу та форми пошуку */
-  display: flex;
-  align-items: center; 
-  justify-content: space-between; 
-  max-width: 1000px; /* Ширина контенту */
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* 3. Стилі для ЛОГОТИПУ */
-.logo {
-  text-decoration: none;
-  color: white; /* Основний колір тексту */
-  margin-right: 30px;
-}
-
-.logo h1 {
-  /* Видаляємо стандартні браузерні відступи */
-  margin: 0; 
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-/* Стиль для синього "PR" у логотипі (потрібно додати <span> в HTML, але ми імітуємо акцент) */
-/* Якщо ви не можете змінити HTML, ви можете змінити стиль перших літер за допомогою JS або не використовувати акцент */
-.logo h1::first-letter {
-  color: #3498db; /* Яскраво-синій акцент */
-}
-
-
-/* 4. Стилі для форми пошуку */
-.search-form {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; 
-  max-width: 450px; /* Обмеження ширини форми */
-  border-radius: 5px;
-  background-color: #3e4a55; /* Трохи світліший фон для поля */
-  overflow: hidden;
-}
-
-/* 5. Стилі для поля вводу */
-#city-input {
-  width: 100%;
-  padding: 10px 15px;
-  border: none;
-  background: transparent;
-  color: #ecf0f1;
-  font-size: 14px;
-  outline: none;
-  flex-grow: 1;
-}
-
-#city-input::placeholder {
-  color: #bdc3c7;
-}
-
-/* 6. Стилі для кнопки "Пошук" */
-.search-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #3498db; /* Синій колір */
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  flex-shrink: 0;
-  /* Видаляємо заокруглення, оскільки форма має загальне заокруглення */
-border-radius: 0;
-}
-
-.search-button:hover {
-    background-color: #2980b9;
-}
-
-
+ 
 /*/////////////////////////////////MAIN//////////////////*/
 /* Стилі для основного вмісту (Main) */
 main {
@@ -120,6 +34,14 @@ main {
   /* Забезпечує, що вміст знаходиться під фіксованим хедером */
   margin-top: 0; 
   background-color: #f4f7f6; /* Світло-сірий фон сторінки */
+  background-image: linear-gradient(to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(146, 148, 199, 0.7)), url(/image/backround.jpg);
+    background-size: cover;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
 }
 
 /* Перевизначення загального контейнера (якщо ви його не задали раніше) */

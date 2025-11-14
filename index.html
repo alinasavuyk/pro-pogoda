@@ -10,14 +10,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/header.css">
 </head>
 <body>
 <header class="app-header">
     <div class="header-content container">
         <a href="index.html" class="logo">
-            <h1>PRO Погода</h1>
+            <h1><span class="logo-pro">PR<svg class="rotating-gear" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
+                viewBox="0 0 48 48">
+                <polygon fill="#ff9800"
+                    points="37,29 42,24 37,19 37,11 29,11 24,6 19,11 11,11 11,19 6,24 11,29 11,37 19,37 24,42 29,37 37,37">
+                </polygon>
+                <path fill="#ffeb3b" d="M13,24c0,6.1,4.9,11,11,11c6.1,0,11-4.9,11-11s-4.9-11-11-11C17.9,13,13,17.9,13,24"></path>
+            </svg></span> Погода</h1>
         </a>
-
         <form id="city-search-form" class="search-form">
             <input type="text" id="city-input" placeholder="Введіть місто..." aria-label="Пошук міста" required>
             <button type="submit" class="search-button">
@@ -32,14 +38,15 @@
                 <div class="location-info">
                     <h2 class="city-name">Kremencuk, Ukraine</h2>
                 </div>
-    
                 <div class="main-display">
                     <div class="temperature-box">
                         <span class="temperature-value">25</span>
                         <span class="unit-degree">&deg;C</span>
                     </div>
                     <div class="weather-icon">
-                        <span>☀️</span>
+                        <span><svg class="logo-svg-sun" width="100" height="100">
+                            <use href="./image/icons.svg#sun"></use>
+                        </svg></span>
                     </div>
                 </div>
     
@@ -53,12 +60,13 @@
     
             <section id="forecast" class="forecast-section">
                 <h3 class="forecast-title">Прогноз на 5 днів</h3>
-    
                 <ul class="forecast-grid">
                     <li class="day-forecast-card">
                         <p class="day-name">ПН</p>
                         <div class="day-icon">
-                            <span>☁️</span>
+                            <span><svg class="logo-svg snowy" width="40" height="40">
+                                    <use href="./image/icons.svg#snowy"></use>
+                                </svg></span>
                         </div>
                         <p class="temp-range">Макс: <span class="max-temp">28</span>° | Мін: <span
                                 class="min-temp">15</span>°</p>
@@ -67,7 +75,9 @@
                     <li class="day-forecast-card">
                         <p class="day-name">ВТ</p>
                         <div class="day-icon">
-                            <span>☀️</span>
+                            <span><svg class="logo-svg-sun" width="40" height="40">
+                                <use href="./image/icons.svg#sun"></use>
+                            </svg></span>
                         </div>
                         <p class="temp-range">Макс: 28° | Мін: 16°</p>
                     </li>
@@ -75,7 +85,9 @@
                     <li class="day-forecast-card">
                         <p class="day-name">СР</p>
                         <div class="day-icon">
-                            <span>☀️</span>
+                            <span><svg class="logo-svg cloudy" width="40" height="40">
+                                <use href="./image/icons.svg#cloudy"></use>
+                            </svg></span>
                         </div>
                         <p class="temp-range">Макс: 29° | Мін: 16°</p>
                     </li>
@@ -83,7 +95,9 @@
                     <li class="day-forecast-card">
                         <p class="day-name">ЧТ</p>
                         <div class="day-icon">
-                            <span>🌤️</span>
+                            <span><svg class="logo-svg rainy" width="40" height="40">
+                                    <use href="./image/icons.svg#rainy"></use>
+                                </svg></span>
                         </div>
                         <p class="temp-range">Макс: 27° | Мін: 15°</p>
                     </li>
@@ -91,7 +105,9 @@
                     <li class="day-forecast-card">
                         <p class="day-name">ПТ</p>
                         <div class="day-icon">
-                            <span>🌧️</span>
+                            <span><svg class="logo-svg lightning" width="40" height="40">
+                                    <use href="./image/icons.svg#lightning"></use>
+                                </svg></span>
                         </div>
                         <p class="temp-range">Макс: 25° | Мін: 13°</p>
                     </li>
