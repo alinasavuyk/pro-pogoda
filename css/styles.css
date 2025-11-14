@@ -1,4 +1,32 @@
-/* 1. Базові стилі для хедера */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+ .container {
+   max-width: 1158px;
+   margin: 0 auto;
+ }
+               /* 1. Базові стилі для хедера */
 .app-header {
   /* Темний фон, як на зразку */
   background-color: #242c34; 
@@ -16,12 +44,6 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
-/* Приклад стилю для .container, якщо він ще не визначений */
- .container {
-    max-width: 1000px;
-    margin: 0 auto;
-} 
 
 /* 3. Стилі для ЛОГОТИПУ */
 .logo {
