@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "api.js",
- "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alinasavuyk/pro-pogoda.git"
@@ -22,5 +22,11 @@
   "homepage": "https://github.com/alinasavuyk/pro-pogoda#readme",
   "devDependencies": {
     "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "chart.js": "^4.5.1",
+    "izitoast": "^1.4.0",
+    "skycons": "^1.0.0"
   }
 }
