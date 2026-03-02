@@ -1,217 +1,186 @@
 /* ==========================================================================
-   1. ЗМІННІ ТА БАЗОВІ НАЛАШТУВАННЯ
+   1. БАЗОВІ НАЛАШТУВАННЯ (Full-Width Reset)
    ========================================================================== */
 :root {
   --primary-color: #3498db;
-  --secondary-color: #2c3e50;
   --bg-dark: #242c34;
-  --bg-input: #3e4a55;
-  --text-white: #ecf0f1;
   --white: #ffffff;
-  --glass-bg: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 
 body {
-  margin: 0;
-  font-family: 'Inter', 'Roboto', sans-serif;
-  color: #333;
-  line-height: 1.5;
-  background-color: #f4f7f6;
+  font-family: 'Inter', sans-serif;
+  background-color: #1a1f24;
+  color: var(--white);
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
+/* Контейнер тепер ПОВНІСТЮ гумовий */
 .container {
-  max-width: 1250px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%; /* Для мобілок - на весь екран */
   padding: 0 15px;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
-   2. ШАПКА (Header)
+   2. ХЕДЕР (На весь екран)
    ========================================================================== */
 .app-header {
   background-color: var(--bg-dark);
-  padding: 12px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  width: 100%;
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
+  width: 100%;
 }
-
-.logo h1 {
-  display: flex;
-  align-items: center;
-  font-size: 26px;
-  color: var(--white);
-  text-decoration: none;
-}
-
-.logo-pro { color: var(--primary-color); display: flex; align-items: center; gap: 5px; }
 
 .search-form {
   display: flex;
-  flex-grow: 1;
-  max-width: 400px;
+  flex: 1; /* Заповнює весь вільний простір */
+  background: rgba(255,255,255,0.1);
   border-radius: 8px;
-  background-color: var(--bg-input);
   overflow: hidden;
 }
 
 #city-input {
-  flex-grow: 1;
-  padding: 10px 15px;
-  border: none;
+  flex: 1;
+  padding: 10px;
   background: transparent;
-  color: var(--text-white);
+  border: none;
+  color: white;
   outline: none;
 }
 
 .search-button {
-  padding: 0 20px;
+  background: var(--primary-color);
   border: none;
-  background-color: var(--primary-color);
-  color: var(--white);
-  font-weight: 600;
-  cursor: pointer;
+  padding: 0 15px;
+  color: white;
 }
 
 /* ==========================================================================
-   3. LAYOUT (Grid - Головна + Прогноз справа)
+   3. ГОЛОВНИЙ КОНТЕНТ ТА СКЛО
    ========================================================================== */
 main {
-  padding: 40px 0;
-  min-height: calc(100vh - 140px);
-  background: linear-gradient(to bottom, rgba(46, 47, 66, 0.6), rgba(146, 148, 199, 0.6)), 
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding: 20px 0;
+  /* Робимо фон стабільним */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
               url('/image/backround.jpg') center/cover fixed;
 }
 
 .weather-layout {
-  display: grid;
-  grid-template-columns: 1fr 280px; /* Головна картка + вузька колонка прогнозу */
-  gap: 30px;
-  align-items: start;
-}
-
-/* ==========================================================================
-   4. ГОЛОВНА КАРТКА (Horizontal Glassmorphism)
-   ========================================================================== */
-.weather-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  padding: 35px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  animation: fadeIn 0.6s ease-out;
+  gap: 20px;
+  width: 100%;
 }
 
-.city-name { font-size: 2.2rem; font-weight: 700; color: var(--secondary-color); text-align: left; }
+/* ВИПРАВЛЕНА КАРТКА - БЕЗ БІЛИХ ПЛЯМ */
+.weather-card {
+  background: var(--glass-bg) !important; /* Тільки прозорість */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 25px;
+  width: 100% !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
 
 .main-content-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  text-align: center;
+  gap: 15px;
 }
 
-.temperature-value { font-size: 8rem; font-weight: 800; color: var(--secondary-color); line-height: 0.9; }
+.temperature-value {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+}
 
-.main-icon-container canvas { width: 130px !important; height: 130px !important; }
-
-/* Таблиця всередині головної картки */
+/* Таблиця всередині теж прозора */
 .current-details-table {
-  flex-grow: 1;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
   padding: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  width: 100%;
 }
 
-.weather-table { width: 100%; border-collapse: collapse; }
-.weather-table td, .weather-table th { padding: 12px; text-align: center; border-bottom: 1px solid #eee; }
-.weather-table th { color: #888; font-size: 0.8rem; text-transform: uppercase; }
+.weather-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-.details-list {
-  display: flex;
-  justify-content: space-around;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  padding-top: 20px;
-  color: var(--secondary-color);
-  font-weight: 600;
+.weather-table td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 /* ==========================================================================
-   5. ПРОГНОЗ ПРАВОРУЧ (Vertical List)
+   4. ПРОГНОЗ (Горизонтальний скрол для мобілок)
    ========================================================================== */
-.forecast-section { display: flex; flex-direction: column; gap: 15px; }
-.forecast-title { color: white; margin: 0; font-size: 1.3rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-
 .forecast-grid {
   display: flex;
-  flex-direction: column; 
-  gap: 12px;
-  padding: 0; margin: 0;
+  gap: 10px;
+  overflow-x: auto; /* Дозволяє гортати вбік */
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Ховаємо скролбар */
 }
 
 .day-forecast-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
+  min-width: 100px;
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
   border: 1px solid var(--glass-border);
-  border-radius: 18px;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  transition: transform 0.2s;
-  cursor: pointer;
 }
-
-.day-forecast-card:hover { transform: translateX(-10px); background: rgba(255,255,255,0.35); }
-.day-forecast-card canvas { width: 40px !important; height: 40px !important; }
 
 /* ==========================================================================
-   6. ADAPTIVITY (Media Queries)
+   5. АДАПТАЦІЯ (Десктоп)
    ========================================================================== */
-
-/* Планшети (до 1100px) */
-@media (max-width: 1100px) {
-  .weather-layout { grid-template-columns: 1fr; }
-  .forecast-grid { flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
-  .day-forecast-card { min-width: 130px; flex-direction: column; gap: 10px; }
-}
-
-/* Мобільні (до 650px) */
-@media (max-width: 650px) {
-  .main-content-wrapper { flex-direction: column; }
-  .temperature-value { font-size: 5rem; }
-  .weather-card { padding: 20px; }
-  .details-list { flex-direction: column; align-items: center; gap: 10px; }
-  .header-content { flex-direction: column; align-items: stretch; }
-  .search-form { max-width: 100%; }
-}
-
-/* Utils */
-.is-hidden { display: none !important; }
-.rotating-gear { animation: spin 4s linear infinite; transform-origin: center; }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.day-forecast-card.active-day {
-    border: 2px solid var(--primary-color);
-    background: rgba(255, 255, 255, 0.35);
-    transform: scale(1.05);
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .weather-layout {
+    flex-direction: row; /* На комп'ютерах знову в ряд */
+    align-items: flex-start;
+  }
+  
+  .weather-card {
+    flex: 1;
+  }
+  
+  .forecast-grid {
+    flex-direction: column;
+    width: 300px;
+    overflow-x: visible;
+  }
+  
+  .main-content-wrapper {
+    flex-direction: row;
+    text-align: left;
+  }
 }
