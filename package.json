@@ -1,0 +1,26 @@
+{
+  "name": "pro-pogoda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alinasavuyk/pro-pogoda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alinasavuyk/pro-pogoda/issues"
+  },
+  "homepage": "https://github.com/alinasavuyk/pro-pogoda#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
